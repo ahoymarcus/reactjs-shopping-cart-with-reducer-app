@@ -26,13 +26,25 @@ Conjunto de projetos de frontend inspirados na apresentação do professor **Joh
 
 ### Imagem do card com Lista de Contatos:
 
-![Imagem do card com Lista de Contatos](/public/images/lista-de-contatos.png)
+![Imagem do card com Lista de Contatos](/public/images/)
 
 <br />
 
 ### Imagem da funcionalidade acrescida de Aniversariantes do Dia:
 
-![Imagem da funcionalidade acrescida de Aniversariantes do Dia](/public/images/aniversariantes-do-dia.png)
+![Imagem da funcionalidade acrescida de Aniversariantes do Dia](/public/images/)
+
+<br />
+
+### Imagem do card com Lista de Contatos:
+
+![Imagem do card com Lista de Contatos](/public/images/)
+
+<br />
+
+### Imagem da funcionalidade acrescida de Aniversariantes do Dia:
+
+![Imagem da funcionalidade acrescida de Aniversariantes do Dia](/public/images/)
 
 <br />
 <br />
