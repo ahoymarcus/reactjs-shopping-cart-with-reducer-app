@@ -38,11 +38,19 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'DECREASE', payload: id });
   };
 
+  const toggleAmount = (id, type) => {
+    dispatch({ type: 'TOGGLE_AMOUNT', payload: { id, type }});
+  };
+
   const fetchData = async () => {
-    dispatch({ type: 'LOADING' });
-    const response = await fetch(url);
-    const cart = await response.json();
-    dispatch({ type: 'DISPLAY_ITEMS', payload: cart });
+    try {
+      dispatch({ type: 'LOADING' });
+      const response = await fetch(url);
+      const cart = await response.json();
+      dispatch({ type: 'DISPLAY_ITEMS', payload: cart });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
 
@@ -65,7 +73,8 @@ const AppProvider = ({ children }) => {
         clearCart,
         remove,
         increase,
-        decrease
+        decrease,
+        toggleAmount
       }}
     >
       {children}
