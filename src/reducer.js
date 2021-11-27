@@ -35,7 +35,7 @@ const reducer = (state, action) => {
         VEJA: que temos duas variáveis 'amount', uma geral controlada pelo estado do app e outra presente em cada cartItem dentro do array de cart.
     */
     if (action.type === 'GET_TOTAL') {
-        const { total, amount } = state.cart.reduce((cartTotal, cartItem) => {
+        let { total, amount } = state.cart.reduce((cartTotal, cartItem) => {
             const { price, amount } = cartItem;
             //console.log(price, amount);
 
@@ -49,8 +49,18 @@ const reducer = (state, action) => {
             total: 0,
             amount: 0
         });
+        /* 
+            CUIDADO, porque toFixed() converte para string enquanto faz o arredondamento.....
+        */
+        total = parseFloat(total.toFixed(2));
 
         return { ...state, total, amount };
+    }
+    if (action.type === 'LOADING') {
+        return { ...state, loading: true };
+    }
+    if (action.type === 'DISPLAY_ITEMS') {
+        return { ...state, cart: action.payload, loading: false };
     }
     
     return state;
