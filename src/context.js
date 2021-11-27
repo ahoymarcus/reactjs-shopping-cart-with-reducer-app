@@ -39,6 +39,13 @@ const AppProvider = ({ children }) => {
   };
 
 
+  useEffect(() => {
+    //console.log('hello');
+
+    dispatch({ type: 'GET_TOTAL' });
+  }, [state.cart]);
+
+
   return (
     <AppContext.Provider
       value={{

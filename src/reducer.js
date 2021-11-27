@@ -31,6 +31,27 @@ const reducer = (state, action) => {
 
         return {...state, cart: tempCart }
     }
+    /* 
+        VEJA: que temos duas variáveis 'amount', uma geral controlada pelo estado do app e outra presente em cada cartItem dentro do array de cart.
+    */
+    if (action.type === 'GET_TOTAL') {
+        const { total, amount } = state.cart.reduce((cartTotal, cartItem) => {
+            const { price, amount } = cartItem;
+            //console.log(price, amount);
+
+            const itemTotal = price * amount;
+
+            cartTotal.total += itemTotal;
+            cartTotal.amount += amount;
+
+            return cartTotal;
+        }, {
+            total: 0,
+            amount: 0
+        });
+
+        return { ...state, total, amount };
+    }
     
     return state;
 };
