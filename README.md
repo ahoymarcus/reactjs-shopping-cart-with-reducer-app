@@ -1,4 +1,4 @@
-# React-JS Cart App
+# React-JS Shopping Cart App
 
 <br />
 
